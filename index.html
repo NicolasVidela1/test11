@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- === Codificación === -->
+    <meta charset="UTF-8">
+
+    <!-- === Viewport Responsive === -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- === Título === -->
+    <title>Nicolás Videla</title>
+
+    <!-- === SEO === -->
+    <meta name="description" content="Live to ride. Ride to live.">
+    <!-- <link rel="canonical" href="https://tudominio.com/"> -->
+    <link rel="canonical" href="https://nicolasvidela1.github.io/test11/">
+    <meta name="author" content="Nicolás Videla">
+    <meta name="robots" content="index, follow">
+
+    <!-- === Open Graph === -->
+    <meta property="og:title" content="Nicolás Videla"> <!-- Nombre de la página del sitio en particular -->
+    <meta property="og:description" content="Live to ride. Ride to live.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content="https://tudominio.com/">
+    <meta property="og:image" content="https://tudominio.com/assets/img/preview/preview.jpg"> --> <!-- JPG para compatibilidad -->
+    <meta property="og:url" content="https://nicolasvidela1.github.io/test11/">
+    <meta property="og:image" content="https://nicolasvidela1.github.io/test11/assets/img/avatar/preview-1.91x1-70.jpg">
+
+    <meta property="og:image:width" content="826">
+    <meta property="og:image:height" content="433">
+    <meta property="og:image:alt" content="Nicolás Videla's Avatar">
+    <meta property="og:site_name" content="Nicolás Videla's Website"> <!-- Nombre general del sitio --> <!-- Mostrado en Telegram -->
+    <meta property="og:locale" content="es_ES">
+
+    <!-- === Twitter Cards === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nicolás Videla">
+    <meta name="twitter:description" content="Live to ride. Ride to live.">
+    <meta name="twitter:image" content="https://nicolasvidela1.github.io/test11/assets/img/avatar/preview-1.91x1-70.jpg">
+    <meta name="twitter:image:alt" content="Nicolás Videla">
+
+    <!-- === Color UI Navegador === -->
+    <meta name="theme-color" content="#333333">
+
+    <!-- === Favicon === -->
+    <!-- Fallback -->
+    <link rel="icon" sizes="any" href="assets/img/favicon/favicon.ico">
+    <!-- PNG -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <!-- Android / Google -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/favicon-192x192.png">
+    <!-- iOS / Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/favicon-180x180.png">
+
+    <!-- === Estilos === -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="container">
+        <div class="card">
+            <div class="top-text">
+                Nicolás Videla
+                <button class="close-button">⨯</button>
+            </div>
+
+            <img fetchpriority="high" src="assets/img/avatar/avatar-500px.webp" alt="" width="150" height="150">
+            <h1>Nicolás Videla</h1>
+            <div class="subtitle">🦅 Live to ride. Ride to live. 🦅</div>
+
+            <a href="#" class="button">Blog</a>
+            <a href="#" class="button">Telegram</a>
+            <a href="#" class="button">E-mail</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Nicolás Videla
+    </footer>
+
+    <script>
+        const closeButton = document.querySelector(".close-button");
+
+        let audioContext;
+        let errorBuffer;
+
+        async function loadSound() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const response = await fetch("/assets/sounds/error.mp3");
+            const arrayBuffer = await response.arrayBuffer();
+            errorBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        }
+
+        function playSound() {
+            const source = audioContext.createBufferSource();
+            source.buffer = errorBuffer;
+            source.connect(audioContext.destination);
+            source.start(0);
+        }
+
+        closeButton.addEventListener("click", async function() {
+            if (!audioContext) {
+                await loadSound();
+            }
+            playSound();
+        });
+    </script>
+</body>
+</html>

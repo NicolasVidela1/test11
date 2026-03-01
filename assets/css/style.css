@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body{
+    margin:0;
+    font-family:"Roboto",sans-serif;
+    background:#008080;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.card{
+    padding:25px;
+    width:260px;
+    text-align:center;
+    background: #C0C0C0;
+    border: 3px solid;
+    border-color: #FFFFFF #808080 #676767 #E6E6E6;
+    box-shadow: 1px 1px 0 0 #000000;
+}
+
+.top-text{
+    font-size:13px; /* Antes 12px */
+    margin: -25px -25px 0px -25px;
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.close-button {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    padding: 0;
+    background: #C0C0C0;
+    border: 1px solid;
+    border-color: #FFFFFF #808080 #676767 #E6E6E6;
+    box-shadow: 0.5px 0.5px 0 0 #000000;
+    margin-right: -2px;
+}
+
+.close-button:active {
+    border: 1px solid;
+    border-color: #676767 #E6E6E6 #FFFFFF #808080;
+    box-shadow: 0 0 0 0 #000000;
+    transform: translate(1px,1px);
+}
+
+img{
+    width:150px;
+    height:150px;
+    margin:15px auto;
+    border: 2px solid;
+    border-color: #676767 #E6E6E6 #FFFFFF #808080;
+    box-shadow: 0 0 0 0 #000000;
+    display: block;
+}
+
+h1{
+    margin:15px 0 5px 0;
+    font-size:28px; /* Antes 20px */
+}
+
+.subtitle{
+    font-size:18px; /* Antes 14px */
+    margin: 5px 0 15px 0;
+}
+
+a.button{
+    display:block;
+    font-size:18px;
+    text-decoration:none;
+    background:#C0C0C0;
+    color:#000000;
+    padding:10px 0;
+    margin:12px 0 0 0;
+    border: 2px solid;
+    border-color: #FFFFFF #808080 #676767 #E6E6E6;
+    box-shadow: 1px 1px 0 0 #000000;
+}
+
+a.button:active {
+    border: 2px solid;
+    border-color: #676767 #E6E6E6 #FFFFFF #808080;
+    box-shadow: 0 0 0 0 #000000;
+    transform: translate(1px,1px);
+}
+
+footer{
+    margin-top:auto;
+    margin-bottom: 15px;
+    text-align:center;
+    color:#FFFFFF;
+    padding:15px 0;
+    font-size:12px;
+}
