@@ -88,7 +88,7 @@
 
         async function loadSound() {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const response = await fetch("/assets/sounds/error.mp3");
+            const response = await fetch("assets/sounds/error.mp3");
             const arrayBuffer = await response.arrayBuffer();
             errorBuffer = await audioContext.decodeAudioData(arrayBuffer);
         }
